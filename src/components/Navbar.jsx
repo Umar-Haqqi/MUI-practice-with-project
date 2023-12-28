@@ -28,7 +28,6 @@ const Navbar = () => {
 
           {/* icons */}
           <IconsContainer sx={{
-            display: { xs: 'none', sm: 'flex' }
           }}>
             <Badge badgeContent={1} color='error'>
               <Mail />
@@ -50,9 +49,7 @@ const Navbar = () => {
 
           {/* Login User */}
           <UserBox sx={{
-            display: { xs: 'flex', sm: 'none' }
           }}>
-            <Typography variant='span'>Umar Haqqui</Typography>
             <Avatar
               sx={{
                 width: 35,
