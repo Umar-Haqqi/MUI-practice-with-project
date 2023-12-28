@@ -1,7 +1,7 @@
 import { Mail, NotificationsActive } from '@mui/icons-material'
 import { AppBar, Avatar, Badge, InputBase, Typography } from '@mui/material'
 import React from 'react'
-import { SearchBar, CustomToolBar, IconsContainer } from '../mui_components/NavbarStyles'
+import { SearchBar, CustomToolBar, IconsContainer, UserBox } from '../mui_components/NavbarStyles'
 
 const Navbar = () => {
 
@@ -27,7 +27,9 @@ const Navbar = () => {
 
 
           {/* icons */}
-          <IconsContainer >
+          <IconsContainer sx={{
+            display: { xs: 'none', sm: 'flex' }
+          }}>
             <Badge badgeContent={1} color='error'>
               <Mail />
             </Badge>
@@ -44,6 +46,21 @@ const Navbar = () => {
               src=''
             />
           </IconsContainer>
+
+
+          {/* Login User */}
+          <UserBox sx={{
+            display: { xs: 'flex', sm: 'none' }
+          }}>
+            <Typography variant='span'>Umar Haqqui</Typography>
+            <Avatar
+              sx={{
+                width: 35,
+                height: 35,
+              }}
+              src=''
+            />
+          </UserBox>
 
         </CustomToolBar>
       </AppBar>

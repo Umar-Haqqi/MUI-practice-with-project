@@ -20,4 +20,11 @@ const IconsContainer = styled(Box)({
     gap: '20px',
 })
 
-export { CustomToolBar, SearchBar, IconsContainer }
+const UserBox = styled(Box)({
+    display: 'flex',
+    alignItems: 'center',
+    gap: '10px',
+    cursor: 'pointer',
+})
+
+export { CustomToolBar, SearchBar, IconsContainer, UserBox }
