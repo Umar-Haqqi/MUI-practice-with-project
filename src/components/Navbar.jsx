@@ -1,9 +1,10 @@
 import { Mail, NotificationsActive } from '@mui/icons-material'
-import { AppBar, Avatar, Badge, InputBase, Typography } from '@mui/material'
-import React from 'react'
+import { AppBar, Avatar, Badge, InputBase, Menu, MenuItem, Typography } from '@mui/material'
+import React, { useState } from 'react'
 import { SearchBar, CustomToolBar, IconsContainer, UserBox } from '../mui_components/NavbarStyles'
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false)
 
   return (
     <>
@@ -11,13 +12,17 @@ const Navbar = () => {
         <CustomToolBar>
 
           {/* brand name */}
-          <Typography variant='h5' sx={{
-            display: { xs: 'none', sm: 'block' }
-          }}>Umar Haqqui .</Typography>
+          <Typography variant='h5'
+            sx={{
+              display: { xs: 'none', sm: 'block' }
+            }}
+          >Umar Haqqui .</Typography>
 
-          <Typography variant='h5' sx={{
-            display: { xs: 'block', sm: 'none' }
-          }}>UH .</Typography>
+          <Typography variant='h5'
+            sx={{
+              display: { xs: 'block', sm: 'none' }
+            }}
+          >UH .</Typography>
 
 
           {/* search bar */}
@@ -37,7 +42,7 @@ const Navbar = () => {
               <NotificationsActive />
             </Badge>
 
-            <Avatar
+            <Avatar onClick={e => setOpen(true)} // open menu when clicked
               sx={{
                 width: 35,
                 height: 35,
@@ -48,8 +53,9 @@ const Navbar = () => {
 
 
           {/* Login User */}
-          <UserBox sx={{
-          }}>
+          <UserBox onClick={() => setOpen(true)} // open menu when clicked
+            sx={{
+            }}>
             <Avatar
               sx={{
                 width: 35,
@@ -59,7 +65,33 @@ const Navbar = () => {
             />
           </UserBox>
 
+
         </CustomToolBar>
+
+        <Menu
+          id="demo-positioned-menu"
+          aria-labelledby="demo-positioned-button"
+
+          // menu open/close toggle
+          open={open}
+          onClose={() => {
+            setOpen(false)
+          }}
+
+          anchorOrigin={{
+            vertical: 'top',
+            horizontal: 'right',
+          }}
+          transformOrigin={{
+            vertical: 'top',
+            horizontal: 'right',
+          }}
+        >
+          <MenuItem>Profile</MenuItem>
+          <MenuItem>My account</MenuItem>
+          <MenuItem>Logout</MenuItem>
+        </Menu>
+
       </AppBar>
     </>
   )
