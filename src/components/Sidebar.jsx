@@ -10,7 +10,10 @@ const Sidebar = () => {
         backgroundColor: 'skyblue',
         p: 2,
       }}
-    >Sidebar Here</Box>
+    >
+      <p sx={{ fontSize: '2.0rem' }}>Sidebar</p>
+    
+    </Box>
   )
 }
 

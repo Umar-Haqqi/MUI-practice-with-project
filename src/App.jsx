@@ -1,4 +1,4 @@
-// import Navbar from "./components/Navbar"
+import Navbar from "./components/Navbar"
 import Sidebar from "./components/Sidebar"
 import Rightbar from "./components/Rightbar"
 import Feed from "./components/Feed"
@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Box>
-        {/* <Navbar /> */}
+        <Navbar />
         <Stack direction="row" spacing={0} justifyContent="center">
           <Sidebar />
           <Feed />
