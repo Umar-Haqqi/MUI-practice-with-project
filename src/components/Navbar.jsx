@@ -8,7 +8,7 @@ const Navbar = () => {
 
   return (
     <>
-      <AppBar position='sticky'>
+      <AppBar position='sticky' >
         <CustomToolBar>
 
           {/* brand name */}

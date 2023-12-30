@@ -6,7 +6,6 @@ const Rightbar = () => {
     <Box sx={{
       flex: 3,
       display: { xs: "none", sm: "block" },
-      bgcolor: 'lightCoral',
       p: 2
     }}
     >RightBar here</Box>
